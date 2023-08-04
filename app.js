@@ -1,1 +1,9 @@
-console.log('Server says hi')
+
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Server says hi')
+});
+
+app.listen(3000);
