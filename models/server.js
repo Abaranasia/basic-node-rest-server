@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors')
 
 class Server {
     constructor() {
@@ -15,8 +16,8 @@ class Server {
     }
 
     middlewares() {
-        this.app.use( express.static('public')) // Public static page
-
+        this.app.use(cors());
+        this.app.use( express.static('public')); // Public static page
     }
 
     routes() {
@@ -28,7 +29,7 @@ class Server {
         });
 
         this.app.post('/api', (req, res) => {
-            res.json({
+            res.status(201).json({
                 response: "post was ok",
                 msg: "You're posting to the server",
             })
