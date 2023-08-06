@@ -1,40 +1,16 @@
-const { Router }= require('express');
+const { Router } = require('express');
+const { apiGet, apiPost, apiPut, apiDelete, apiPatch } = require('../controllers/api');
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.json({
-        response: "get was ok",
-        msg: "You're getting from the server",
-    })
-});
+router.get('/', apiGet);
 
-router.post('/', (req, res) => {
-    res.status(201).json({
-        response: "post was ok",
-        msg: "You're posting to the server",
-    })
-});
+router.post('/', apiPost);
 
-router.put('/', (req, res) => {
-    res.json({
-        response: "put was ok",
-        msg: "You're putting to the server",
-    })
-});
+router.put('/', apiPut);
 
-router.patch('/', (req, res) => {
-    res.json({
-        response: "patch was ok",
-        msg: "You're patching to the server",
-    })
-});
+router.patch('/', apiPatch);
 
-router.delete('/', (req, res) => {
-    res.json({
-        response: "delete was ok",
-        msg: "You're deleting from the server",
-    })
-});
+router.delete('/', apiDelete);
 
 module.exports = router;
