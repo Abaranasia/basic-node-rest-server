@@ -18,7 +18,7 @@ class Server {
 
     middlewares() {
         this.app.use(cors());
-        this.app.use( express.static('public')); // Public static page
+        this.app.use( express.static('../../public')); // Public static page
     }
 
     routes() {
