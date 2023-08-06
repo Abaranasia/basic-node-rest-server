@@ -1,5 +1,11 @@
 const { Router } = require('express');
-const { apiGet, apiPost, apiPut, apiDelete, apiPatch } = require('../controllers/api');
+const { 
+    apiGet, 
+    apiPost, 
+    apiPut, 
+    apiDelete, 
+    apiPatch,
+} = require('../controllers/api');
 
 const router = Router();
 
